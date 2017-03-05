@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Task from './task.js';
 
 class TaskList extends Component {
-handleOnFinishedClick(){
-    this.props.on2FinishedClick();
+handleOnFinishedClick(activityTitleText){
+    var aTT = activityTitleText;
+    this.props.on2FinishedClick(aTT);
 }
 handleOnDeleteClick(){
     this.props.on2DeleteClick();

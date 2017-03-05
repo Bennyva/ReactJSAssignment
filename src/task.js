@@ -4,7 +4,8 @@ import FontAwesome from 'react-fontawesome';
 
 class Task extends Component {
     handleFinishedClick(){
-      this.props.onFinishedClick();
+        var activityTitleText = this.props.activity_title;
+      this.props.onFinishedClick(activityTitleText);
     }
     handleDeleteClick(){
       this.props.onDeleteClick();
@@ -29,10 +30,10 @@ class Task extends Component {
                         <Row style={{paddingTop: '10px', cursor: 'pointer'}}>
                           <Col xs={6}>
                             
-                                <FontAwesome name='times' onClick={this.handleFinishedClick.bind(this)}/>
+                                <FontAwesome name='times' onClick={this.handleDeleteClick.bind(this)}/>
                           </Col>
                           <Col xs={6}>
-                            <FontAwesome name='check' onClick={this.handleDeleteClick.bind(this)}/>
+                            <FontAwesome name='check' onClick={this.handleFinishedClick.bind(this)}/>
                           </Col>
                         </Row>
                     </Col>

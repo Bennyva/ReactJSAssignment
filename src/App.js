@@ -72,8 +72,8 @@ class App extends Component {
   handlePasswordChange: function(e) {
      this.setState({password: e.target.value});
   },*/
-  handleOn2Finished(){
-    alert(1);
+  handleOn2Finished(aTT){
+    alert(aTT);
   }
 
   handleOn2Delete(){
