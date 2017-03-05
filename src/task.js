@@ -26,9 +26,10 @@ class Task extends Component {
                         <p>{this.props.activity_description}</p>
                     </Col>
                     <Col xs={1}>
-                        <Row style={{paddingTop: '10px'}}>
+                        <Row style={{paddingTop: '10px', cursor: 'pointer'}}>
                           <Col xs={6}>
-                            <FontAwesome name='times' onClick={this.handleFinishedClick.bind(this)}/>
+                            
+                                <FontAwesome name='times' onClick={this.handleFinishedClick.bind(this)}/>
                           </Col>
                           <Col xs={6}>
                             <FontAwesome name='check' onClick={this.handleDeleteClick.bind(this)}/>

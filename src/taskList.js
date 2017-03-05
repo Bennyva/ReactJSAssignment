@@ -2,17 +2,25 @@ import React, { Component } from 'react';
 import Task from './task.js';
 
 class TaskList extends Component {
+handleOnFinishedClick(){
+    this.props.on2FinishedClick();
+}
+handleOnDeleteClick(){
+    this.props.on2DeleteClick();
+}
   render() {      
         return (
             <div>
-                {this.props.tasks.map(function(task, index) {
+                {this.props.tasks.map(function(task){
                     return <Task
-                                key={index}
                                 time={task.time}
                                 period={task.period}
                                 activity_title={task.activity_title}
-                                activity_description={task.activity_description}/>
-                })}
+                                activity_description={task.activity_description}
+                                onFinishedClick={this.handleOnFinishedClick.bind(this)} 
+                                onDeleteClick={this.handleOnDeleteClick.bind(this)}/>
+                }, this)
+            }
             </div>
     );
   }

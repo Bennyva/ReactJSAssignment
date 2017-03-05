@@ -72,8 +72,13 @@ class App extends Component {
   handlePasswordChange: function(e) {
      this.setState({password: e.target.value});
   },*/
+  handleOn2Finished(){
+    alert(1);
+  }
 
-
+  handleOn2Delete(){
+    alert(2);
+  }
 
   render() {
     return (
@@ -82,8 +87,14 @@ class App extends Component {
           <br />
           <Date />
           <br />
-          <TaskList tasks={this.state.tasks} />
-          <br />
+          <TaskList 
+            tasks={this.state.tasks}
+            on2FinishedClick={this.handleOn2Finished.bind(this)} 
+            on2DeleteClick={this.handleOn2Delete.bind(this)}
+            
+
+           />
+          <br/>
           <NewTask onToDoAdd={this.handleOnToDoAdd.bind(this)} />
           <AddButton onClick={this.addTask.bind(this)} />
          
