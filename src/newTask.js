@@ -7,13 +7,21 @@ class Task extends Component {
         super(props);
         this.state = { value: ''};
 
-        this.handleChange = this.handleChange.bind(this);
+        //this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
-    handleChange(e){
-        this.setState({value: e.target.value});
+    handleChange(name, e){
+        var change = {};
+        change[name] = e.target.value;
+
+        
+        this.props.editActivity(name, change[name]);
+
+        //console.log(task);
+        //this.props.editActivity(e.target.value);
+        //this.setState({value: e.target.value});
     }
 
     handleSubmit(e){
@@ -30,11 +38,41 @@ class Task extends Component {
         alert('Please fill in all form information.\nTime: ' + timeText + '\nPeriod: ' + periodText + '\nActivity Title: ' + activityTitleText + '\nActivity Description: '  + activityDescText);    
         return;
         }
-        this.props.onToDoAdd(timeText,periodText,activityTitleText, activityDescText);
-        this.time.value = "-";
-        this.period.value = "-"
-        this.activityTitle.value = "";
-        this.activityDesc.value = "";
+
+        //checks if it is updating or not
+        if(this.props.isEdit !== 0){
+            var updatedTask= {
+                id:this.props.isEdit,
+                time: this.time.value.trim(),
+                period: this.period.value.trim(),
+                activity_title: this.activityTitle.value.trim(),
+                activity_description: this.activityDesc.value.trim()
+            }
+            console.log(updatedTask);
+            this.time.value = "-";
+            this.period.value = "-"
+            this.activityTitle.value = "";
+            this.activityDesc.value = "";
+
+            this.props.onToDoUpdate(updatedTask);
+        }else{
+            var newTask={
+                time: this.time.value.trim(),
+                period: this.period.value.trim(),
+                activity_title: this.activityTitle.value.trim(),
+                activity_description: this.activityDesc.value.trim()
+            }
+                        
+            
+            this.time.value = "-";
+            this.period.value = "-"
+            this.activityTitle.value = "";
+            this.activityDesc.value = "";
+
+            this.props.onToDoAdd(newTask);
+        }
+
+        
 
         
         
@@ -42,131 +80,70 @@ class Task extends Component {
     render() {
         return (
             <div>
-                {/* <Row>
-                    <Col xs={1}>
-                                <Row>
-                                  <Col xs={6}>
-                                      <ControlLabel>Time</ControlLabel>
-                                          {' '}
-                                  </Col>
-                                  <Col xs={6}>
-                                    <select class="custom-select">
-                                      <option selected>-</option>
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                      <option value="4">4</option>
-                                      <option value="5">5</option>
-                                      <option value="6">6</option>
-                                      <option value="7">7</option>
-                                      <option value="8">8</option>
-                                      <option value="9">9</option>
-                                      <option value="10">10</option>
-                                      <option value="11">11</option>
-                                      <option value="12">12</option>
-                                    </select>
-                                  </Col>
-                                </Row>
-                                <Row>
-                                    <Col xs={6}>
-                                      <ControlLabel>Period</ControlLabel>
-                                        {' '}
-                                            
-                                    </Col>
-                                    <Col xs={6}>
-                                      <select class="custom-select">
-                                          <option selected>-</option>
-                                          <option value="AM">AM</option>
-                                          <option value="PM">PM</option>
-                                        </select>
-                                    </Col>
-                                </Row>
-                    </Col>
-                    <Col xs={3}>
-                        <FormControl type="text" placeholder="Activity Title" />
-                        
-                    </Col>
-                    <Col xs={7}>
-                       <FormControl componentClass="textarea" placeholder="Activity Description" />
-                    </Col>
-                    <Col xs={1}>
-                        <Row style={{paddingTop: '10px'}}>
-                          <Col xs={6}>
-                            <FontAwesome name='times' />
-                          </Col>
-                          <Col xs={6}>
-                            <FontAwesome name='check' />
-                          </Col>
-                        </Row>
-                    </Col>
-                </Row> */}
-                
-                 <Form onSubmit={this.handleSubmit} inline >
-                    <FormGroup controlId="formInlineTime">
-                        <Col componentClass={ControlLabel} sm={2}>
+             <Form onSubmit={this.handleSubmit} inline >
+                <FormGroup controlId="formInlineTime">
+                    <Col componentClass={ControlLabel} sm={2}>
                         Time
-                        </Col>
-                        <Col xs={10}>
-                                    <FormControl componentClass="select" placeholder="select" inputRef={ref => { this.time = ref; }}>
-                                      <option selected value="-">-</option>
-                                      <option value="1">1</option>
-                                      <option value="2">2</option>
-                                      <option value="3">3</option>
-                                      <option value="4">4</option>
-                                      <option value="5">5</option>
-                                      <option value="6">6</option>
-                                      <option value="7">7</option>
-                                      <option value="8">8</option>
-                                      <option value="9">9</option>
-                                      <option value="10">10</option>
-                                      <option value="11">11</option>
-                                      <option value="12">12</option>
-                                    </FormControl>
-                                  </Col>
-                      
-                      
-                    </FormGroup>
-                    <FormGroup controlId="formInlinePeriod">
-                        <Col componentClass={ControlLabel} sm={2}>
-                        Period
-                        </Col>
-                        <Col xs={10}>
-                                    <FormControl componentClass="select" placeholder="select" inputRef={ref => { this.period = ref; }}>
-                                      <option selected>-</option>
-                                      <option value="AM">AM</option>
-                                      <option value="PM">PM</option>
-                                      
-                                    </FormControl>
-                                  </Col>
-                      
-                      
-                    </FormGroup>
-                    <FormGroup controlId="formInlineActivityTitle">
-                      <Col componentClass={ControlLabel} sm={2}>
-                      Activity
+                    </Col>
+                    <Col xs={10}>
+                        <FormControl componentClass="select" value={this.props.time} onChange={this.handleChange.bind(this,'time')} placeholder="select" inputRef={ref => { this.time = ref; }}>
+                          <option selected value="-">-</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </FormControl>
                       </Col>
-                      <Col xs={10}>
-                        <FormControl type="text" inputRef={ref => { this.activityTitle = ref; }} onChange={this.handleChange} placeholder="Activity Title" />
-                      </Col>
-                    </FormGroup>
-                    <FormGroup controlId="formControlsActivityDesc">
-                      <Col componentClass={ControlLabel} sm={3}>
-                      Activity Description
-                      </Col>
-                      <Col xs={9}>
-                      <FormControl inputRef={ref => { this.activityDesc = ref; }} onChange={this.handleChange} componentClass="textarea" placeholder="Activity Description" />
-                      </Col>
-                    </FormGroup>
-                    <FormGroup>
-                        <Button type="submit">
-                          Save
-                        </Button>
-                    </FormGroup>
-                  </Form>
-                
+                </FormGroup>
+
+                <FormGroup controlId="formInlinePeriod">
+                    <Col componentClass={ControlLabel} sm={2}>
+                    Period
+                    </Col>
+                    <Col xs={10}>
+                                <FormControl componentClass="select" value={this.props.period} onChange={this.handleChange.bind(this,'period')} placeholder="select"  inputRef={ref => { this.period = ref; }}>
+                                  <option selected value="-">-</option>
+                                  <option value="AM">AM</option>
+                                  <option value="PM">PM</option>
+                                  
+                                </FormControl>
+                              </Col>
+                </FormGroup>
+
+                <FormGroup controlId="formInlineActivityTitle">
+                  <Col componentClass={ControlLabel} sm={2}>
+                  Activity
+                  </Col>
+                  <Col xs={10}>
+                    <FormControl type="text" inputRef={ref => { this.activityTitle = ref; }} value={this.props.activity_title} onChange={this.handleChange.bind(this, 'activity_title')} placeholder="Activity Title" />
+                  </Col>
+                </FormGroup>
+
+                <FormGroup controlId="formControlsActivityDesc">
+                  <Col componentClass={ControlLabel} sm={3}>
+                  Activity Description
+                  </Col>
+                  <Col xs={9}>
+                    <FormControl inputRef={ref => { this.activityDesc = ref; }} value={this.props.activity_description} onChange={this.handleChange.bind(this, 'activity_description')} componentClass="textarea" placeholder="Activity Description" />
+                  </Col>
+                </FormGroup>
+
+                <FormGroup>
+                    <Button type="submit">
+                      Save
+                    </Button>
+                </FormGroup>
+              </Form>
             </div>
         );
     }
 }
-
 export default Task;

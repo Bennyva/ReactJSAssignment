@@ -4,16 +4,20 @@ import FontAwesome from 'react-fontawesome';
 
 class Task extends Component {
     handleFinishedClick(){
-        var activityTitleText = this.props.activity_title;
-      this.props.onFinishedClick(activityTitleText);
+      this.props.onFinishedClick();
     }
     handleDeleteClick(){
       this.props.onDeleteClick();
+    }
+
+    editTask(){
+       this.props.editTask();     
     }
     render() {
         return (
             <div>
                 <Row>
+                <span onClick={this.editTask.bind(this)}>
                     <Col xs={1}>
                         <div>
                             <p style={{textAlign: 'center', fontWeight: 'bold', paddingTop: '10px'}}>{this.props.time}
@@ -23,9 +27,12 @@ class Task extends Component {
                         </div>
                     </Col>
                     <Col xs={10}>
-                        <h4>{this.props.activity_title}</h4>
-                        <p>{this.props.activity_description}</p>
+                        
+                            <h4>{this.props.activity_title}</h4>
+                            <p>{this.props.activity_description}</p>
+                        
                     </Col>
+                </span>
                     <Col xs={1}>
                         <Row style={{paddingTop: '10px', cursor: 'pointer'}}>
                           <Col xs={6}>
