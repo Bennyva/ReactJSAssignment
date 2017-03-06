@@ -16,12 +16,15 @@ class Task extends Component {
         var change = {};
         change[name] = e.target.value;
 
-        
+        console.log(this.time.value.trim() + " c");
         this.props.editActivity(name, change[name]);
 
         //console.log(task);
         //this.props.editActivity(e.target.value);
         //this.setState({value: e.target.value});
+    }
+    clearForm(){
+        this.props.clearForm();
     }
 
     handleSubmit(e){
@@ -32,7 +35,7 @@ class Task extends Component {
         var periodText = this.period.value.trim();
         var activityTitleText = this.activityTitle.value.trim();
         var activityDescText = this.activityDesc.value.trim();
-
+        console.log(timeText + 'b');
 
         if(timeText === "-" || periodText === "-" || !activityTitleText || !activityDescText){
         alert('Please fill in all form information.\nTime: ' + timeText + '\nPeriod: ' + periodText + '\nActivity Title: ' + activityTitleText + '\nActivity Description: '  + activityDescText);    
@@ -55,6 +58,7 @@ class Task extends Component {
             this.activityDesc.value = "";
 
             this.props.onToDoUpdate(updatedTask);
+            this.clearForm();
         }else{
             var newTask={
                 time: this.time.value.trim(),
@@ -70,6 +74,8 @@ class Task extends Component {
             this.activityDesc.value = "";
 
             this.props.onToDoAdd(newTask);
+            this.clearForm();
+            console.log(this.time.value);
         }
 
         

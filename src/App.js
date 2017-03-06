@@ -79,6 +79,7 @@ class App extends Component {
     };
 
     this.setState({tasks: this.state.tasks.concat(task)});
+    this.forceUpdate();
     console.log('handle on to do add');
   }
 /*
@@ -154,6 +155,17 @@ class App extends Component {
     });*/
   }
 
+  handleClearForm(){
+
+      this.setState({
+      activity_title: "",
+      activity_description: "",
+      time:"-",
+      period: "-"
+      });
+    }
+  
+
   handleOnToDoUpdate(task){
    var tasks = this.state.tasks;
     for(var i = 0; i < tasks.length; i++){
@@ -190,6 +202,7 @@ class App extends Component {
             onToDoAdd={this.handleOnToDoAdd.bind(this)} 
             onToDoUpdate={this.handleOnToDoUpdate.bind(this)}
             editActivity={this.handleEditActivity.bind(this)}
+            clearForm={this.handleClearForm.bind(this)}
           />
           <AddButton onClick={this.addTask.bind(this)} />
          
