@@ -6,6 +6,7 @@ import Date from './date.js';
 import Avatar from './avatar.js';
 import AddButton from './addButton.js';
 import NewTask from './newTask.js';
+import { Router, Route, Link, IndexRoute, hashHistory, browserHistory} from 'react-router';
 
 class App extends Component {
 //// we have to bind the handleClick() function here to make it context-aware and all we are doing here is calling the onClick() function which got passed as a prop and that in turn will call the initial addTask() function.
@@ -184,7 +185,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{padding: '30px 30px'}}>
+      /*<div style={{padding: '30px 30px'}}>
           <Avatar />
           <br />
           <Date />
@@ -206,9 +207,68 @@ class App extends Component {
           />
           <AddButton onClick={this.addTask.bind(this)} />
          
-      </div>
+      </div>*/
+      <Router history={hashHistory}>
+        <Route path='/' component={Container}>
+          <IndexRoute component={Avatar} />
+          <Route path='addTask' component={addTask}>
+            <IndexRoute component={TwitterFeed} />
+            <Route path='instagram' component={Instagram} />
+          </Route>
+          <Route path='newTask' component={() => (
+            <div>
+            <NewTask 
+              {...this.state}
+              onToDoAdd={this.handleOnToDoAdd.bind(this)}  
+              onToDoUpdate={this.handleOnToDoUpdate.bind(this)}
+              editActivity={this.handleEditActivity.bind(this)}
+              clearForm={this.handleClearForm.bind(this)}
+            /> 
+            <TaskList 
+            //this passes all the state values to the component
+            {...this.state}
+            on2FinishedClick={this.handleOn2Finished.bind(this)} 
+            on2DeleteClick={this.handleOn2Delete.bind(this)}
+            on2EditTask={this.handleOn2EditTask.bind(this)}
+           />
+           </div>
+            )} 
+          />
+          <Route path='*' component={NotFound} />
+        </Route>
+      </Router>
+
+
+
     );
   }
 }
 
+const Nav = () => (
+  <div>
+    <Link onlyActiveOnIndex  activeStyle={{color:'#53acff'}} to='/'>Tasks</Link>&nbsp;
+    <Link activeStyle={{color:'#53acff'}} to='/addTask'>New Task</Link>&nbsp;
+    <Link activeStyle={{color:'#53acff'}} to='/about'>About</Link>
+  </div>
+)
+
+const Container = (props) => <div>
+  <Nav />
+  {props.children}
+</div>
+
+const Instagram = () => <h3>Instagram Feed</h3>
+const TwitterFeed = () => <h3>Twitter Feed</h3>
+const NotFound = () => (<h1>404.. This page is not found!</h1>)
+const Home = () => <h1>Hello from Home!</h1>
+
+
+const addTask = (props) => <div>
+  <br />
+
+  <Link to='/addTask'>Twitter Feed</Link>&nbsp;
+  <Link to='/addTask/instagram'>Instagram Feed</Link>
+  <h1>We are located at 555 Jackson St.</h1>
+  {props.children}
+</div>
 export default App;
