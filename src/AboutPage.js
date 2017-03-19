@@ -7,7 +7,8 @@ class AboutPage extends React.Component{
 	render(){
     	return (
     		<div>
-    			<h1>About Page</h1>
+    			<h1>Title About</h1>
+                <button type="button" onClick={this.props.onClick}></button>
     		</div>
 		);
 	}

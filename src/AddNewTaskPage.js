@@ -48,6 +48,8 @@ class AddNewTaskPage extends React.Component{
       ]
     }
   }
+
+
   addTask(){
     alert(1);
    /* var tasks = this.state.tasks;
@@ -77,6 +79,8 @@ class AddNewTaskPage extends React.Component{
       activity_title: newTask.activity_title, 
       activity_description: newTask.activity_description
     };
+
+    this.firebaseRef.push(task);
 
     this.setState({tasks: this.state.tasks.concat(task)});
     this.forceUpdate();
@@ -184,8 +188,7 @@ class AddNewTaskPage extends React.Component{
 	render(){
     	return (
 		 <div style={{padding: '30px 30px'}}>
-          <Avatar />
-          <br />
+         
           <Date />
           <br />
           <TaskList 
