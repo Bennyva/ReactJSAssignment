@@ -1,28 +1,27 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: ... Benjamin Vanarragon ...
 
 ## Overview.
-...... A statement of the app concept and objectives (about a half-page) ........
+...... This app is designed to be a productivity application where users can store their To-do's and lists of tasks that need to be completed. They are able to add a time for which the task must be completed and then they are able to check them off. Users are also able to edit current tasks if they need to change the time or description. Users can also delete tasks if they don't want that task appearing anymore on their tasklist for whatever reason.  ........
 
 
- . . . . . List of user features (excluding user registration and authentication) . . . . 
+ . . . . . List of user features  . . . . 
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Add a Task
+ + Edit a Task
+ + Complete a Task
+ + Delete a Task
+ + Search Tasks
 
 ## Installation requirements.
 . . . .  List of software used to develop the app . . . . . . . 
 + ReactJS v15.3.0
 + Bootstrap 3
 + create-react-app tool
-+ etc
-+ etc 
+ 
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
+. . . . . . npm install + npm start
 
 ## Data Model Design.
 
