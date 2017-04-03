@@ -41,7 +41,7 @@ A diagram showing the app's hierarchical component design (see example below).
 
 ## UI Design.
 
-. . . . . Screenshots of app's views (see example below) with appropriate captions (user regeneration and login views, if implemented, can be omitted) . . . . . . . 
+. . . . . Screenshots of app's views (see example below) with appropriate captions . . . . . . . 
 
 !["Home Page"](./home.jpg )
 !["Add Excercise Page"](./addExcercise.jpg "Add Excercise Page" )
@@ -52,21 +52,21 @@ A diagram showing the app's hierarchical component design (see example below).
 ## Routing.
 . . . . List each route supported and state the associated view . . . . . 
 
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ / - displays home page
++ /addExcercise - allows users to add/edit/delete and excercise
++ /excercises - allows users to search/sort excercises
++ /excercises/:id - detail view of a particular foo (:id)
++ /about - provides an about page for the application
 
 ## Extra features
 
-. . . . . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app . . . . . .  
+. . . . . Users can sort by muscle group, sort by text entered, edit an excercise in the form . . . . . .  
 
 ## Independent learning.
 
-. . . . . State the non-standard aspects of Angular (or other related technologies) that you researched and applied in this assignment . . . . .  
+. . . . . I learned a lot about ReactJS in this time. The way components worked with parents and children, the way the data flows throughout the application. I learned trivial things, for example for being able to type in a textbox you must have a method handler to handle the text changing and to update it  . . . . .  
 
 
 
 [image1]: ./model.png
 [image2]: ./design.jpg
-[image3]: ./screen.png
