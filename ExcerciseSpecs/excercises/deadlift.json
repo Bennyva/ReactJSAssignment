@@ -1,0 +1,24 @@
+{
+    "id": "deadlift",
+    "name": "Deadlifts",
+    "muscles": {
+        "muscleGroup": "Back",
+        "musclesWorked":[
+            "gluteus maximus",
+            " hamstrings",
+            "erector spinae",
+            "quadriceps"
+        ]
+    },
+
+    "description": "The deadlift is a weight training exercise in which a loaded barbell or bar is lifted off the ground to the hips, then lowered back to the ground. It is one of the three powerlifting exercises, along with the squat and bench press.",
+
+    "images": [
+        "img/excercises/deadlift-1.jpg",
+        "img/excercises/deadlift-2.jpg"
+    ],
+
+
+    "extra": "Walk to the bar. Stand with your mid-foot under the bar. Grab the bar. Bend over without bending your legs. Bend your knees. Drop into position by bending your knees until your shins touch the bar.Lift your chest. Straighten your back by raising you chest. Pull. Take a big breath, hold it and stand up with the weight"
+
+}

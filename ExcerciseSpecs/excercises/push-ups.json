@@ -1,0 +1,26 @@
+{
+    "id": "push-ups",
+    "name": "Push-Ups",
+    "muscles": {
+        "muscleGroup": "Chest",
+        "musclesWorked":[
+            "Abdominals",
+            "Deltoid",
+            "Pectoralis Major",
+            "Pectoralis Minor",
+            "Triceps brachii",
+            "Biceps"
+        ]
+    },
+
+    "description": "A push-up (or press-up) is a common calisthenics exercise performed in a prone position by raising and lowering the body using the arms. Push-ups exercise the pectoral muscles, triceps, and anterior deltoids, with ancillary benefits to the rest of the deltoids, serratus anterior, coracobrachialis and the midsection as a whole. Push-ups are a basic exercise used in civilian athletic training or physical education and commonly in military physical training.",
+
+    "images": [
+        "img/excercises/push-up-1.jpg",
+        "img/excercises/push-up-2.jpg"
+    ], 
+
+
+    "extra": "Assume a face-down prone position on the floor. Raise yourself using your arms Repeat lowering and raising at a steady pace... GREAT!"
+
+}

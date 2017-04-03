@@ -1,0 +1,24 @@
+{
+    "id": "seated-chest-press",
+    "name": "Seated Chest Press",
+    "muscles": {
+        "muscleGroup": "Chest",
+        "musclesWorked":[
+            "anterior deltoid",
+            "coracobrachialis",
+            "Pectoralis Major",
+            "Triceps brachii"
+        ]
+    },
+
+    "description": "The seated chest press is an upper body strength training exercise that consists of pressing a weight upwards from a supine position. The exercise works the pectoralis major as well as supporting chest, arm, and shoulder muscles such as the anterior deltoids, serratus anterior, coracobrachialis, scapulae fixers, trapezii, and the triceps.",
+
+    "images": [
+        "img/excercises/deadlift-1.jpg",
+        "img/excercises/deadlift-2.jpg"
+    ],
+
+
+    "extra": "Lie Down. Sit at the end of your flat bench first. Squeeze Your Shoulder-blades. Raise your chest and tighten your upper-back.Grab The Bar. Pinky inside the ring marks.Set Your Feet. Feet flat on the floor using a shoulder-width stance.Unrack. Straighten your arms to lift the bar out of the uprights."
+
+}

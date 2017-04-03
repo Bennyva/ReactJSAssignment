@@ -1,0 +1,27 @@
+{
+    "id": "squats",
+    "name": "Squats",
+    "muscles": {
+        "muscleGroup": "Legs",
+        "musclesWorked":[
+            "Gluteus maximus",
+            "quadriceps",
+            "Erector spinae",
+            "Transverse abdominus",
+            "gluteus medius/minimus "
+
+        ]
+    },
+
+    "description": "In strength training and fitness, the squat is a compound, full body exercise that trains primarily the muscles of the thighs, hips and buttocks, quadriceps femoris muscle (vastus lateralis, vastus medialis, vastus intermedius and rectus femoris), hamstrings, as well as strengthening the bones, ligaments and insertion of the tendons throughout the lower body. ",
+
+    "images": [
+        "img/excercises/squats.jpg",
+        "img/excercises/squats-1.jpg",
+        "img/excercises/squats-2.jpg"
+    ],
+
+
+    "extra": "Stand straight with feet hip-width apart. Stand with your feet apart, directly under your hips, and place your hands on your hips. Tighten your stomach musclesLower down, as if sitting. Straighten your legs.Repeat"
+
+}

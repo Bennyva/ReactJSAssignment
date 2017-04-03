@@ -1,0 +1,25 @@
+{
+    "id": "bench-press",
+    "name": "Bench Press",
+    "muscles": {
+        "muscleGroup": "Chest",
+        "musclesWorked":[
+            "anterior deltoid",
+            "coracobrachialis",
+            "Pectoralis Major",
+            "Triceps brachii"
+        ]
+    },
+
+    "description": "The bench press is an upper body strength training exercise that consists of pressing a weight upwards from a supine position. The exercise works the pectoralis major as well as supporting chest, arm, and shoulder muscles such as the anterior deltoids, serratus anterior, coracobrachialis, scapulae fixers, trapezii, and the triceps. A barbell is generally used to hold the weight, but a pair of dumbbells can also be used.",
+
+    "images": [
+        "img/excercises/bench-press.jpg",
+        "img/excercises/bench-press-1.jpg",
+        "img/excercises/bench-press-2.jpg"
+    ],
+
+
+    "extra": "Lie Down. Sit at the end of your flat bench first. Squeeze Your Shoulder-blades. Raise your chest and tighten your upper-back.Grab The Bar. Pinky inside the ring marks.Set Your Feet. Feet flat on the floor using a shoulder-width stance.Unrack. Straighten your arms to lift the bar out of the uprights."
+
+}

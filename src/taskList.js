@@ -17,8 +17,8 @@ handleEditTask(task){
                 {this.props.tasks.map(function(task){
                     return <Task
                                 id={task.id}
-                                time={task.time}
-                                period={task.period}
+                                reps={task.reps}
+                                sets={task.sets}
                                 activity_title={task.activity_title}
                                 activity_description={task.activity_description}
                                 onFinishedClick={this.handleOnFinishedClick.bind(this, task)} 

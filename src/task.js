@@ -16,35 +16,35 @@ class Task extends Component {
     render() {
         return (
             <div>
-                <Row>
+                <Col xs={8}>
                 <span onClick={this.editTask.bind(this)}>
-                    <Col xs={1}>
+                    <Col xs={2}>
                         <div>
-                            <p style={{textAlign: 'center', fontWeight: 'bold', paddingTop: '10px'}}>{this.props.time}
+                            <p style={{textAlign: 'center', fontWeight: 'bold', paddingTop: '10px'}}>{this.props.reps} Reps
                                 <br/>
-                                <span>{this.props.period}</span>
+                                <span>{this.props.sets}</span> Sets
                             </p>
                         </div>
                     </Col>
-                    <Col xs={10}>
+                    <Col xs={8}>
                         
                             <h4>{this.props.activity_title}</h4>
                             <p>{this.props.activity_description}</p>
                         
                     </Col>
                 </span>
-                    <Col xs={1}>
+                    <Col xs={2}>
                         <Row style={{paddingTop: '10px', cursor: 'pointer'}}>
                           <Col xs={6}>
                             
                                 <FontAwesome name='times' onClick={this.handleDeleteClick.bind(this)}/>
                           </Col>
                           <Col xs={6}>
-                            <FontAwesome name='check' onClick={this.handleFinishedClick.bind(this)}/>
+                            <FontAwesome name='pencil-square-o' onClick={this.editTask.bind(this)}/>
                           </Col>
                         </Row>
                     </Col>
-                </Row>
+                </Col>
             </div>
         );
     }

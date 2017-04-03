@@ -6,25 +6,22 @@ var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
 
 import Nav from './Header.js';
-import Tasks from './Tasks.js';
-import Home from './Home.js';
-import Add from './Add.js';
-
-import TaskList from './taskList.js';
-import NewTask from './newTask.js';
-import AddButton from './addButton.js';
-import addButtonView from './addButtonView.js';
+import Home from './Pages/Home.js';
+import About from './Pages/About.js';
 import addNewTaskPage from './AddNewTaskPage.js';
-import aboutPage from './AboutPage.js';
+import excerciseDetail from './excerciseDetail.js';
+import excerciseList from './excerciseList.js';
 
 import App from './App.js';
 
 var routes = (
 	<Router history = {hashHistory}>
 		<Route path='/' component={App}>
-	      
-	      <Route path='/addTask' component={addNewTaskPage} />
-	      <Route path='/about' component={aboutPage} />
+		  <IndexRoute component={Home}/>
+	      <Route path='/addExcercise' component={addNewTaskPage} />
+          <Route path="/excercises" component={excerciseList}/>
+          <Route path="/excercises/:id" component={excerciseDetail} />
+		  <Route path="/about" component={About} />
       	</Route>
 	</Router>
 );

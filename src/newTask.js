@@ -16,7 +16,7 @@ class Task extends Component {
         var change = {};
         change[name] = e.target.value;
 
-        console.log(this.time.value.trim() + " c");
+        console.log(this.reps.value.trim() + " c");
         this.props.editActivity(name, change[name]);
 
         //console.log(task);
@@ -31,14 +31,14 @@ class Task extends Component {
         e.preventDefault();
         //create a property function and pass it up to the parent
 
-        var timeText = this.time.value.trim();
-        var periodText = this.period.value.trim();
-        var activityTitleText = this.activityTitle.value.trim();
-        var activityDescText = this.activityDesc.value.trim();
-        console.log(timeText + 'b');
+        var repsText = this.reps.value.trim();
+        var setsText = this.sets.value.trim();
+        var excerciseText = this.activityTitle.value.trim();
+        var extraNotesText = this.activityDesc.value.trim();
+        console.log(repsText + 'b');
 
-        if(timeText === "-" || periodText === "-" || !activityTitleText || !activityDescText){
-        alert('Please fill in all form information.\nTime: ' + timeText + '\nPeriod: ' + periodText + '\nActivity Title: ' + activityTitleText + '\nActivity Description: '  + activityDescText);    
+        if(repsText === "-" || setsText === "-" || !excerciseText){
+        alert('Please fill in all form information.\nReps: ' + repsText + '\nSets: ' + setsText + '\nExcercise: ' + excerciseText);
         return;
         }
 
@@ -46,14 +46,14 @@ class Task extends Component {
         if(this.props.isEdit !== 0){
             var updatedTask= {
                 id:this.props.isEdit,
-                time: this.time.value.trim(),
-                period: this.period.value.trim(),
+                reps: this.reps.value.trim(),
+                sets: this.sets.value.trim(),
                 activity_title: this.activityTitle.value.trim(),
                 activity_description: this.activityDesc.value.trim()
             }
             console.log(updatedTask);
-            this.time.value = "-";
-            this.period.value = "-"
+            this.reps.value = "-";
+            this.sets.value = "-"
             this.activityTitle.value = "";
             this.activityDesc.value = "";
 
@@ -61,21 +61,21 @@ class Task extends Component {
             this.clearForm();
         }else{
             var newTask={
-                time: this.time.value.trim(),
-                period: this.period.value.trim(),
+                reps: this.reps.value.trim(),
+                sets: this.sets.value.trim(),
                 activity_title: this.activityTitle.value.trim(),
                 activity_description: this.activityDesc.value.trim()
             }
                         
             
-            this.time.value = "-";
-            this.period.value = "-"
+            this.reps.value = "-";
+            this.sets.value = "-"
             this.activityTitle.value = "";
             this.activityDesc.value = "";
 
             this.props.onToDoAdd(newTask);
             this.clearForm();
-            console.log(this.time.value);
+            console.log(this.reps.value);
         }
 
         
@@ -85,14 +85,14 @@ class Task extends Component {
     }
     render() {
         return (
-            <div>
-             <Form onSubmit={this.handleSubmit} inline >
-                <FormGroup controlId="formInlineTime">
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Time
+            <Col xs={4}>
+             <Form onSubmit={this.handleSubmit}  >
+                <FormGroup controlId="formReps">
+                    <Col componentClass={ControlLabel} sm={12}>
+                        Reps
                     </Col>
-                    <Col xs={10}>
-                        <FormControl componentClass="select" value={this.props.time} onChange={this.handleChange.bind(this,'time')} placeholder="select" inputRef={ref => { this.time = ref; }}>
+                    <Col xs={12}>
+                        <FormControl componentClass="select" value={this.props.reps} onChange={this.handleChange.bind(this,'reps')} placeholder="select" inputRef={ref => { this.reps = ref; }}>
                           <option selected value="-">-</option>
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -110,35 +110,39 @@ class Task extends Component {
                       </Col>
                 </FormGroup>
 
-                <FormGroup controlId="formInlinePeriod">
-                    <Col componentClass={ControlLabel} sm={2}>
-                    Period
+                <FormGroup controlId="formSets">
+                    <Col componentClass={ControlLabel} sm={12}>
+                    Sets
                     </Col>
-                    <Col xs={10}>
-                                <FormControl componentClass="select" value={this.props.period} onChange={this.handleChange.bind(this,'period')} placeholder="select"  inputRef={ref => { this.period = ref; }}>
+                    <Col xs={12}>
+                                <FormControl componentClass="select" value={this.props.sets} onChange={this.handleChange.bind(this,'sets')} placeholder="select"  inputRef={ref => { this.sets = ref; }}>
                                   <option selected value="-">-</option>
-                                  <option value="AM">AM</option>
-                                  <option value="PM">PM</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
                                   
                                 </FormControl>
                               </Col>
                 </FormGroup>
 
-                <FormGroup controlId="formInlineActivityTitle">
-                  <Col componentClass={ControlLabel} sm={2}>
-                  Activity
+                <FormGroup controlId="formActivityTitle">
+                  <Col componentClass={ControlLabel} sm={12}>
+                  Excercise
                   </Col>
-                  <Col xs={10}>
-                    <FormControl type="text" inputRef={ref => { this.activityTitle = ref; }} value={this.props.activity_title} onChange={this.handleChange.bind(this, 'activity_title')} placeholder="Activity Title" />
+                  <Col xs={12}>
+                    <FormControl type="text" inputRef={ref => { this.activityTitle = ref; }} value={this.props.activity_title} onChange={this.handleChange.bind(this, 'activity_title')} placeholder="Excercise" />
                   </Col>
                 </FormGroup>
 
                 <FormGroup controlId="formControlsActivityDesc">
-                  <Col componentClass={ControlLabel} sm={3}>
-                  Activity Description
+                  <Col componentClass={ControlLabel} sm={12}>
+                  Notes about Excercise
                   </Col>
-                  <Col xs={9}>
-                    <FormControl inputRef={ref => { this.activityDesc = ref; }} value={this.props.activity_description} onChange={this.handleChange.bind(this, 'activity_description')} componentClass="textarea" placeholder="Activity Description" />
+                  <Col xs={12}>
+                    <FormControl inputRef={ref => { this.activityDesc = ref; }} value={this.props.activity_description} onChange={this.handleChange.bind(this, 'activity_description')} componentClass="textarea" placeholder="Extra Notes" />
                   </Col>
                 </FormGroup>
 
@@ -148,7 +152,7 @@ class Task extends Component {
                     </Button>
                 </FormGroup>
               </Form>
-            </div>
+            </Col>
         );
     }
 }

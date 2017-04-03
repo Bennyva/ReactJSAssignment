@@ -16,34 +16,16 @@ class AddNewTaskPage extends React.Component{
       tasks: [
           {
               'id': 1,
-              'time': '2',
-              'period': 'AM',
-              'activity_title': 'Finish Tutorial Series',
-              'activity_description': '#ReactForNewbies'
+              "reps": '2',
+              "sets": '4',
+              'activity_title': 'Push-Ups',
+              'activity_description': 'left elbow is weaker'
           }, {
               'id': 2,
-              'time': '9',
-              'period': 'AM',
-              'activity_title': 'Meeting with Team Leads',
-              'activity_description': 'New Project Kickoff'
-          }, {
-              'id': 3,
-              'time': '11',
-              'period': 'AM',
-              'activity_title': 'Call Mom',
-              'activity_description': 'Return her call before she kills me'
-          }, {
-              'id': 4,
-              'time': '3',
-              'period': 'PM',
-              'activity_title': 'Fix Wifey\'s website',
-              'activity_description': 'FB Ads Integration not working'
-          }, {
-              'id': 5,
-              'time': '6',
-              'period': 'PM',
-              'activity_title': 'Do DB Backups',
-              'activity_description': 'Related to upcoming server migration'
+              "reps": '9',
+              "sets": '4',
+              'activity_title': 'Bench Press',
+              'activity_description': ''
           }
       ]
     }
@@ -56,8 +38,8 @@ class AddNewTaskPage extends React.Component{
     var newId = (tasks[tasks.length - 1].id) + 1;
     var task = {
       'id': newId,
-      'time': '5', 
-      'period': 'AM', 
+      'reps': '5',
+      'sets': 'AM',
       'activity_title': 'Jogging', 
       'activity_description': 'Go for a run!'
     };
@@ -74,13 +56,12 @@ class AddNewTaskPage extends React.Component{
     var newId = (tasks[tasks.length - 1].id) + 1;
     var task = {
       id: newId,
-      time: newTask.time, 
-      period: newTask.period, 
+      reps: newTask.reps,
+      sets: newTask.sets,
       activity_title: newTask.activity_title, 
       activity_description: newTask.activity_description
     };
 
-    this.firebaseRef.push(task);
 
     this.setState({tasks: this.state.tasks.concat(task)});
     this.forceUpdate();
@@ -95,7 +76,7 @@ class AddNewTaskPage extends React.Component{
   },*/
   handleOn2Finished(task){
     alert(task.id + '\n' + 
-          task.time + ' ' + task.period + '\n' + 
+          task.reps + ' ' + task.sets + '\n' +
           task.activity_title + '\n' + 
           task.activity_description);
   }
@@ -117,15 +98,15 @@ class AddNewTaskPage extends React.Component{
       isEdit: task.id,
       activity_title: task.activity_title,
       activity_description: task.activity_description,
-      time: task.time,
-      period: task.period
+      reps: task.reps,
+      sets: task.sets
     });
     console.log('handle on 2 edit task');
   }
 
   //allows us to edit the text in the controlled Component
   handleEditActivity(name, value){
-    var activityTitle, activityDesc, time, period;
+    var activityTitle, activityDesc, reps, period;
     if(name === 'activity_title'){
       activityTitle = value;
       this.setState({
@@ -136,15 +117,15 @@ class AddNewTaskPage extends React.Component{
        this.setState({
       activity_description: activityDesc
     });
-    }else if(name === 'time'){
-      time = value;
+    }else if(name === 'reps'){
+      reps = value;
       this.setState({
-     time:time
+     reps:reps
     });
-    }else if(name ==='period'){
-      period = value;
+    }else if(name ==='sets'){
+      sets = value;
       this.setState({
-     period: period
+     sets: sets
     });
     }else{
       console.log('error in handleEditActivity');
@@ -154,8 +135,8 @@ class AddNewTaskPage extends React.Component{
    /* this.setState({
       activity_title: activityTitle,
       activity_description: activityDesc,
-      time: time,
-      period: period
+      reps: reps,
+      sets: sets
     });*/
   }
 
@@ -164,8 +145,8 @@ class AddNewTaskPage extends React.Component{
       this.setState({
       activity_title: "",
       activity_description: "",
-      time:"-",
-      period: "-"
+      reps:"-",
+      sets: "-"
       });
     }
   
@@ -188,8 +169,19 @@ class AddNewTaskPage extends React.Component{
 	render(){
     	return (
 		 <div style={{padding: '30px 30px'}}>
-         
+        
           <Date />
+          <br />
+
+          <NewTask 
+            {...this.state}
+            onToDoAdd={this.handleOnToDoAdd.bind(this)} 
+            onToDoUpdate={this.handleOnToDoUpdate.bind(this)}
+            editActivity={this.handleEditActivity.bind(this)}
+            clearForm={this.handleClearForm.bind(this)}
+          />
+
+          <br />
           <br />
           <TaskList 
           //this passes all the state values to the component
@@ -199,14 +191,8 @@ class AddNewTaskPage extends React.Component{
             on2EditTask={this.handleOn2EditTask.bind(this)}
            />
           <br/>
-          <NewTask 
-            {...this.state}
-            onToDoAdd={this.handleOnToDoAdd.bind(this)} 
-            onToDoUpdate={this.handleOnToDoUpdate.bind(this)}
-            editActivity={this.handleEditActivity.bind(this)}
-            clearForm={this.handleClearForm.bind(this)}
-          />
-          <AddButton onClick={this.addTask.bind(this)} />
+          
+
          
       </div>
 		);
