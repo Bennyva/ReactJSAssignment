@@ -4,15 +4,15 @@ import Footer from './Footer.js';
 import Date from './date.js';
 import Avatar from './avatar.js';
 import AddButton from './addButton.js';
-import NewTask from './newTask.js';
-import TaskList from './taskList.js'
+import NewTask from './newExcercise.js';
+import TaskList from './excerciseList.js'
 var ReactRouter = require('react-router');  
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
-import addNewTaskPage from './AddNewTaskPage.js';
-import aboutPage from './excerciseList.js';
+import addNewTaskPage from './AddNewExcercisePage.js';
+import aboutPage from './searchExcercises.js';
 
 
 import { Link} from 'react-router';

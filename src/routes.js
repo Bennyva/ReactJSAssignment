@@ -8,9 +8,9 @@ var IndexRoute = ReactRouter.IndexRoute;
 import Nav from './Header.js';
 import Home from './Pages/Home.js';
 import About from './Pages/About.js';
-import addNewTaskPage from './AddNewTaskPage.js';
+import addNewTaskPage from './AddNewExcercisePage.js';
 import excerciseDetail from './excerciseDetail.js';
-import excerciseList from './excerciseList.js';
+import excerciseList from './searchExcercises.js';
 
 import App from './App.js';
 

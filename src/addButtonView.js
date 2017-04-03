@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import AddButton from './addButton.js';
-import NewTask from './newTask.js';
+import NewTask from './newExcercise.js';
 import { Router, ReactRouter ,Route, Link, IndexRoute, hashHistory, browserHistory, Switch} from 'react-router';
 import {Navbar,Nav, NavItem, NavDropdown, MenuItem, Input, Button} from 'react-bootstrap';
 import NavBen from './Header.js';

@@ -2,8 +2,8 @@ import React from 'react';
 import Date from './date.js';
 import Avatar from './avatar.js';
 import AddButton from './addButton.js';
-import NewTask from './newTask.js';
-import TaskList from './taskList.js'
+import NewExcercise from './newExcercise.js';
+import ExcerciseList from './excerciseList.js'
 
 class AddNewTaskPage extends React.Component{
 //// we have to bind the handleClick() function here to make it context-aware and all we are doing here is calling the onClick() function which got passed as a prop and that in turn will call the initial addTask() function.
@@ -173,7 +173,7 @@ class AddNewTaskPage extends React.Component{
           <Date />
           <br />
 
-          <NewTask 
+          <NewExcercise
             {...this.state}
             onToDoAdd={this.handleOnToDoAdd.bind(this)} 
             onToDoUpdate={this.handleOnToDoUpdate.bind(this)}
@@ -183,7 +183,7 @@ class AddNewTaskPage extends React.Component{
 
           <br />
           <br />
-          <TaskList 
+          <ExcerciseList
           //this passes all the state values to the component
             {...this.state}
             on2FinishedClick={this.handleOn2Finished.bind(this)} 
