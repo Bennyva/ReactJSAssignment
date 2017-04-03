@@ -64,10 +64,13 @@ A diagram showing the app's hierarchical component design (see example below).
 ## UI Design.
 
 . . . . . Screenshots of app's views (see example below) with appropriate captions . . . . . . . 
-
+## Home Page
 !["Home Page"](./home.jpg )
+## Add Excercise Page
 !["Add Excercise Page"](./addExcercise.jpg "Add Excercise Page" )
+## Search Excercise Page
 !["Search Excercise Page"](./searchExcercise.jpg "Search Excercise Page")
+## About Page
 !["About Page"](./about.jpg "About Page")
 
 
