@@ -1,5 +1,6 @@
 # Assignment 1 - ReactJS app.
 
+
 Name: ... Benjamin Vanarragon ...
 
 ## Overview.
@@ -30,8 +31,30 @@ Name: ... Benjamin Vanarragon ...
 Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent).
 
 ![][image1]
+![](./codeexample.png)
 
-Use meaningful sample data. Briefly explain any non-trivial issues.
+
+```javascript
+ excercises: [
+          {
+              'id': 1,
+              "reps": '2',
+              "sets": '4',
+              'activity_title': 'Push-Ups',
+              'activity_description': 'left elbow is weaker'
+          }, {
+              'id': 2,
+              "reps": '9',
+              "sets": '4',
+              'activity_title': 'Bench Press',
+              'activity_description': ''
+          }
+      ]
+```
+
+
+
+Use meaningful `sample` data. Briefly explain any non-trivial issues.
 
 ## App Component Design.
 
