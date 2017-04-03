@@ -3,22 +3,24 @@
 Name: ... Benjamin Vanarragon ...
 
 ## Overview.
-...... This app is designed to be a productivity application where users can store their To-do's and lists of tasks that need to be completed. They are able to add a time for which the task must be completed and then they are able to check them off. Users are also able to edit current tasks if they need to change the time or description. Users can also delete tasks if they don't want that task appearing anymore on their tasklist for whatever reason.  ........
+...... This app is designed to be a productivity application where users can store their Excercises and work-outs. They are able to add a number of reps and sets for which excercise they did and some additional notes. Users can edit their work-outs as well.Users can also delete a work-out if they don't want that excercise appearing anymore on their dashboard for whatever reason. Users can search a database of excercises in the application, sort by text, or by muscle-group. They can click an item for further information on how to perform the excercise.  ........
 
 
  . . . . . List of user features  . . . . 
  
- + Add a Task
- + Edit a Task
- + Complete a Task
- + Delete a Task
- + Search Tasks
+ + Add an Excercise
+ + Edit an Excercise
+ + Delete an Excercise
+ + Search an Excercise
+ + Sort an Excercise
+ + Expand an Excercise for more detail
 
 ## Installation requirements.
 . . . .  List of software used to develop the app . . . . . . . 
 + ReactJS v15.3.0
 + Bootstrap 3
 + create-react-app tool
++ Node JS v6.0.0
  
 
 . . . . . . npm install + npm start
