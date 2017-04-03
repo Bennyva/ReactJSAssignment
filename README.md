@@ -30,7 +30,7 @@ Name: ... Benjamin Vanarragon ...
 
 Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent).
 
-!["Data Model"][./model.png]
+!["Data Model"](./model.png)
 
 
 ```javascript
