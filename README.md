@@ -43,7 +43,11 @@ A diagram showing the app's hierarchical component design (see example below).
 
 . . . . . Screenshots of app's views (see example below) with appropriate captions (user regeneration and login views, if implemented, can be omitted) . . . . . . . 
 
-![][image3]
+!["Home Page"](./home.png )
+!["Add Excercise Page"](./addExcercise.png "Add Excercise Page" )
+!["Search Excercise Page"](./searchExcercise.png "Search Excercise Page")
+!["About Page"](./about.png "About Page")
+
 
 ## Routing.
 . . . . List each route supported and state the associated view . . . . . 
