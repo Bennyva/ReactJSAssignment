@@ -36,6 +36,20 @@
 					  "imageUrl": "img/excercises/deadlift-1.jpg",
 					  "muscleCategory": "Back",
 					  "excerciseName": "Deadlift"
+				  },
+				  {
+
+					  "id": "calf-raises",
+					  "imageUrl": "img/excercises/calf-raises.jpg",
+					  "muscleCategory": "Legs",
+					  "excerciseName": "Calf Raises"
+				  },
+				  {
+
+					  "id": "pullups",
+					  "imageUrl": "img/excercises/pullups.jpg",
+					  "muscleCategory": "Back",
+					  "excerciseName": "Pull Ups"
 				  }
 
 

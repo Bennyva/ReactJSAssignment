@@ -1,0 +1,25 @@
+{
+    "id": "calf-raises",
+    "name": "Calf Raises",
+    "muscles": {
+        "muscleGroup": "Legs",
+        "musclesWorked":[
+            "calfs",
+            "Legs",
+            "Pectoralis Major",
+            "Triceps brachii"
+        ]
+    },
+
+    "description": "The calf raise is a lower body excercise for your legs. It works out your calfs.",
+
+    "images": [
+        "img/excercises/calf-raises.jpg",
+        "img/excercises/calf-raises1.jpg",
+        "img/excercises/calf-raises2.jpg"
+    ],
+
+
+    "extra": "Lie Down. Sit at the end of your flat bench first. Squeeze Your Shoulder-blades. Raise your chest and tighten your upper-back.Grab The Bar. Pinky inside the ring marks.Set Your Feet. Feet flat on the floor using a shoulder-width stance.Unrack. Straighten your arms to lift the bar out of the uprights."
+
+}

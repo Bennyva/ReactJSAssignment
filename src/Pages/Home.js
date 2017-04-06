@@ -7,7 +7,7 @@ export default class Home extends React.Component{
 				<h1>Excercise Tracker Home</h1>
 				<br />
 				<div className="col-md-5">
-				<p>Welcome to the Excercise App. This appliation allows you to track your daily excercise and search for new excercises.constructor</p>
+				<p>Welcome to the Excercise App. This application allows you to track your daily excercise and search for new excercises</p>
 				<br />
 				<br />
 				<p>

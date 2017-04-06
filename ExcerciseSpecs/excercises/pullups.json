@@ -1,0 +1,25 @@
+{
+    "id": "pullups",
+    "name": "Pull Ups",
+    "muscles": {
+        "muscleGroup": "Back",
+        "musclesWorked":[
+            "back",
+            "deltoids",
+            "Pectoralis Major",
+            "Triceps brachii"
+        ]
+    },
+
+    "description": "The pull up is a lower body excercise for your back but it also works out your upper back.",
+
+    "images": [
+        "img/excercises/pullups.jpg",
+        "img/excercises/pullups1.jpg",
+        "img/excercises/pullups2.jpg"
+    ],
+
+
+    "extra": "Lie Down. Sit at the end of your flat bench first. Squeeze Your Shoulder-blades. Raise your chest and tighten your upper-back.Grab The Bar. Pinky inside the ring marks.Set Your Feet. Feet flat on the floor using a shoulder-width stance.Unrack. Straighten your arms to lift the bar out of the uprights."
+
+}
