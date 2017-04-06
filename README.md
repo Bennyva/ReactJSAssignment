@@ -59,7 +59,8 @@ Use meaningful `sample` data. Briefly explain any non-trivial issues.
 
 A diagram showing the app's hierarchical component design (see example below). 
 
-![][image2]
+
+!["App component Design"](./diagram.png)
 
 ## UI Design.
 
